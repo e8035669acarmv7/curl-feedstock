@@ -15,6 +15,7 @@ fi
     --prefix=${PREFIX} \
     --host=${HOST} \
     --disable-ldap \
+    --enable-websockets \
     --with-ca-bundle=${PREFIX}/ssl/cacert.pem \
     $USESSL \
     --with-zlib=${PREFIX} \
@@ -22,6 +23,7 @@ fi
     --with-gssapi=${PREFIX} \
     --with-libssh2=${PREFIX} \
     --with-nghttp2=${PREFIX} \
+    --without-libpsl \
 || cat config.log
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
